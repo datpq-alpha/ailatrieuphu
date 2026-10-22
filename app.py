@@ -35,7 +35,7 @@ def api_key():
 
 
 def make_quiz(key: str):
-    client = genai.Client(api_key=key, http_options=types.HttpOptions(timeout=60000))
+    client = genai.Client(api_key=key, http_options=types.HttpOptions(timeout=180000))
     prompt = (
         "Tạo CHÍNH XÁC 10 câu trắc nghiệm kiến thức tổng hợp bằng tiếng Việt, "
         "đa dạng lĩnh vực Toán, Khoa học, Lịch sử, Địa lý, Công nghệ, Văn hóa. "
