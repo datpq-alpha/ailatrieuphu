@@ -35,13 +35,13 @@ def api_key():
 
 
 def make_quiz(key: str):
-    client = genai.Client(api_key=key, http_options=types.HttpOptions(timeout=180000))
+    client = genai.Client(api_key=key, http_options=types.HttpOptions(timeout=90000))
     prompt = (
         "Tạo CHÍNH XÁC 10 câu trắc nghiệm kiến thức tổng hợp bằng tiếng Việt, "
         "đa dạng lĩnh vực Toán, Khoa học, Lịch sử, Địa lý, Công nghệ, Văn hóa. "
         "3 câu đầu dễ, 4 câu tiếp trung bình, 3 câu cuối khó. "
         "Không lặp ý tưởng câu hỏi trong bộ. Mỗi câu có đúng 4 lựa chọn khác nhau, "
-        "chỉ một lựa chọn đúng, giải thích ngắn gọn và chính xác. "
+        "chỉ một lựa chọn đúng, giải thích ngắn gọn và chính xác bằng 1 - 2 câu. "
         "correct_index là vị trí phương án đúng (0 đến 3). "
         "difficulty là 'Dễ', 'Trung bình' hoặc 'Khó' tương ứng từng vị trí. "
         f"Để đa dạng mỗi lần chơi, mã phiên ngẫu nhiên là {random.randrange(10**12)}. "
